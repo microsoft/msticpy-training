@@ -1,12 +1,17 @@
+Azure:
+  auth_methods:
+  - cli
+  - msi
+  - devicecode
+  cloud: global
 AzureSentinel:
   Workspaces:
 QueryDefinitions:
-  Default:
-    - 'queries'
   Custom:
-    - './data'
+  - ./data
+  Default:
+  - queries
 TIProviders:
   TorExitNodes:
-    Primary: True
+    Primary: true
     Provider: Tor
-OtherProviders:
