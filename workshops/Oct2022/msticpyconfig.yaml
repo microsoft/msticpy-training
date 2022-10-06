@@ -1,0 +1,12 @@
+AzureSentinel:
+  Workspaces:
+QueryDefinitions:
+  Default:
+    - 'queries'
+  Custom:
+    - './data'
+TIProviders:
+  TorExitNodes:
+    Primary: True
+    Provider: Tor
+OtherProviders:
