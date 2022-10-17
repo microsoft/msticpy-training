@@ -21,3 +21,16 @@ KeyVault:
   TenantId: 72f988bf-86f1-41af-91ab-2d7cd011db47
   UseKeyring: false
   VaultName: msticpy-training
+Azure:
+  auth_methods:
+  - cli
+  - msi
+  - devicecode
+  cloud: global
+QueryDefinitions:
+  Custom:
+  - ./data
+  Default:
+  - queries
+TIProviders:
+
