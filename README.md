@@ -5,6 +5,36 @@ This repo is holds training materials and tools used for demos for the
 Please refer to that site and the [MSTICPy documentation](https://msticpy.readthedocs.io/) on
 ReadTheDocs.
 
+
+# Docker Instructions
+
+Build Docker image locally:
+
+`docker build -t msticpy-training -f .\.devcontainer\Dockerfile`
+
+Run docker image:
+
+`docker run -p 8888:8888 msticpy-training`
+
+Connect VSCode to Connector: [Attach to a Docker Container](https://code.visualstudio.com/docs/remote/attach-container)
+
+To attach to a Docker container, either select ***Dev Containers: Attach to Running Container...*** from the Command Palette (F1) or use the ***Remote Explorer*** in the Activity Bar and from the ***Containers*** view, select the ***Attach to Container*** inline action on the container you want to connect to
+
+Once you open a notebook in VSCode. You will see Select Kernel option on right hand top corner.
+![](.\images\Docker-01-Select-kernel.png)
+
+Once you click on it, you will be prompted to install Jupyter VSCode extension in container.
+![](.\images\Docker-02-Install-VSCode-Extension.png)
+
+After you finished installation, you can then click Select Kernel and choose Connect to local Jupyter server.
+![](.\images\Docker-03-Connect-to-Jupyter.png).
+Run Jupyter server URI from VSCode Terminal.
+![](.\images\Docker-04-Retrieve-Server-URL.png )
+and then enter the URL on the next screen.
+![](.\images\Docker-05-Enter-URI.png)
+Finally, select a Remote Kernel.
+![](.\images\Docker-06-Remote-Kernel.png)
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
