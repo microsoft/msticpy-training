@@ -2,7 +2,7 @@
 FROM jupyter/minimal-notebook
 LABEL maintainer="Msticpy Dev Team <msticpy@microsoft.com>"
 
-USER $NB_UID
+USER ${NB_UID}
 
 # Add conda to path
 ENV PATH /opt/conda/envs/env/bin:$PATH
@@ -21,7 +21,7 @@ RUN conda install --quiet --yes ${INSTALL_CONDA_PACKAGES} && \
     git clone https://github.com/microsoft/msticpy-training.git && \
     pip install --requirement /home/jovyan/msticpy/requirements-all.txt
 
-ENV MSTICPYCONFIG /home/jovyan/msticpy-training/msticpyconfig.yaml
+ENV MSTICPYCONFIG /home/jovyan/msticpy-training/workshops/Oct2022/msticpyconfig.yaml
 
 # Activate ipywidgets extension in the environment that runs the notebook server
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
@@ -46,3 +46,7 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter labextension install @jupyterlab/github --no-build && \
     jupyter labextension enable git && \
     jupyter lab build --dev-build=False
+
+USER ${NB_UID}
+
+WORKDIR "/home/jovyan/msticpy-training/workshops/Oct2022"
