@@ -8,9 +8,13 @@ ReadTheDocs.
 
 # Docker Instructions
 
+Install docker for desktop on Windows : 
+
+Follow the instuctions at docker docs - https://docs.docker.com/desktop/install/windows-install/
+
 Build Docker image locally:
 
-`docker build -t msticpy-training -f .\.devcontainer\Dockerfile`
+`docker build -t msticpy-training -f .\.devcontainer\Dockerfile .`
 
 Run docker image:
 
