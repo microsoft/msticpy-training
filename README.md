@@ -25,19 +25,31 @@ Connect VSCode to Connector: [Attach to a Docker Container](https://code.visuals
 To attach to a Docker container, either select ***Dev Containers: Attach to Running Container...*** from the Command Palette (F1) or use the ***Remote Explorer*** in the Activity Bar and from the ***Containers*** view, select the ***Attach to Container*** inline action on the container you want to connect to
 
 Once you open a notebook in VSCode. You will see Select Kernel option on right hand top corner.
-![](.\media\Docker-01-Select-kernel.png)
+<img src="./workshops/Oct2022/media/Docker-01-Select-kernel.png"
+alt="Docker Select Kernel"
+title="Docker Select Kernel" height="70" />
 
 Once you click on it, you will be prompted to install Jupyter VSCode extension in container.
-![](.\media\Docker-02-Install-VSCode-Extension.png)
+<img src="./workshops/Oct2022/media/Docker-02-Install-VSCode-Extension.png"
+alt="Install VSCode extension"
+title="Install VSCode extension" height="70" />
 
 After you finished installation, you can then click Select Kernel and choose Connect to local Jupyter server.
-![](.\media\Docker-03-Connect-to-Jupyter.png).
+<img src="./workshops/Oct2022/media/Docker-03-Connect-to-Jupyter.png"
+alt="Connect to Jupyter"
+title="Connect to Jupyter" height="70" />
 Run Jupyter server URI from VSCode Terminal.
-![](.\media\Docker-04-Retrieve-Server-URL.png )
+<img src="./workshops/Oct2022/media/Docker-04-Retrieve-Server-URL.png"
+alt="Retrieve Server URL"
+title="Retrieve Server URL" height="70" />
 and then enter the URL on the next screen.
-![](.\media\Docker-05-Enter-URI.png)
+<img src="./workshops/Oct2022/media/Docker-05-Enter-URI.png"
+alt="Enter URI"
+title="Enter URI" height="70" />
 Finally, select a Remote Kernel.
-![](.\media\Docker-06-Remote-Kernel.png)
+<img src="./workshops/Oct2022/media/Docker-06-Remote-Kernel.png"
+alt="Remote Kernel"
+title="Remote Kernel" height="70" />
 
 ## Contributing
 
