@@ -19,6 +19,10 @@ sources:
     args:
       query: processes_on_host.pkl
     parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
   list_host_logons:
     description: List logons on host
     metadata:
@@ -26,6 +30,10 @@ sources:
     args:
       query: host_logons.pkl
     parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
   list_host_logon_failures:
     description: List logon failures on host
     metadata:
@@ -33,6 +41,10 @@ sources:
     args:
       query: failed_logons.pkl
     parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
   list_logon_attempts_by_account:
     description: Success and failed
     metadata:
@@ -40,6 +52,10 @@ sources:
     args:
       query: win_logon_attempts.pkl
     parameters:
+      account_name:
+        description: Account name
+        type: str
+        default: ""
   list_host_events:
     description: List events on host
     metadata:
@@ -47,6 +63,10 @@ sources:
     args:
       query: all_events_df.pkl
     parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
   get_process_tree:
     description: Get process tree for a process
     metadata:
@@ -54,6 +74,10 @@ sources:
     args:
       query: process_tree.pkl
     parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
   list_all_logons_by_host:
     description: Return Logon Events For A Host
     metadata:
@@ -61,6 +85,10 @@ sources:
     args:
       query: win_host_logons.pkl
     parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
   summarize_events:
     description: Summarize host events
     metadata:
@@ -68,6 +96,10 @@ sources:
     args:
       query: all_events_df.pkl
     parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
   schdld_tasks_and_services:
     description: Scheduled Tasks and Services from host
     metadata:
@@ -75,6 +107,10 @@ sources:
     args:
       query: all_events_df.pkl
     parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
   account_change_events:
     description: Account change events from host
     metadata:
@@ -82,6 +118,10 @@ sources:
     args:
       query: all_events_df.pkl
     parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
   notable_events:
     description: Notable events from host
     metadata:
@@ -89,3 +129,18 @@ sources:
     args:
       query: all_events_df.pkl
     parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
+  list_host_processes_mde:
+    description: Device process events (Defender)
+    metadata:
+      data_families: [M365D]
+    args:
+      query: mde_procs_cs1.pkl
+    parameters:
+      host_name:
+        description: Host name
+        type: str
+        default: ""
