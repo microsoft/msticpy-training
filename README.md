@@ -40,16 +40,19 @@ alt="Connect to Jupyter"
 title="Connect to Jupyter" height="70" />
 
 - Run Jupyter server URI from VSCode Terminal.
+
 <img src="./workshops/Oct2022/media/Docker-04-Retrieve-Server-URL.png"
 alt="Retrieve Server URL"
 title="Retrieve Server URL" height="70" />
 
 - and then enter the URL on the next screen.
+
 <img src="./workshops/Oct2022/media/Docker-05-Enter-URI.png"
 alt="Enter URI"
 title="Enter URI" height="70" />
 
 - Finally, select a Remote Kernel.
+
 <img src="./workshops/Oct2022/media/Docker-06-Remote-Kernel.png"
 alt="Remote Kernel"
 title="Remote Kernel" height="70" />
