@@ -1,2 +1,3 @@
 msticpy[all]
 papermill
+openpyxl
