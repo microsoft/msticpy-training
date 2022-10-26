@@ -28,6 +28,10 @@ DataProviders:
       ClientSecret:
           KeyVault: defendersecret
       TenantId: 8360dd21-0294-4240-9128-89611f415c53
+  Kusto:
+    Args:
+      Cluster: https://msticpytraining.eastus.kusto.windows.net
+      IntegratedAuth: True
 Azure:
   auth_methods:
   - cli
