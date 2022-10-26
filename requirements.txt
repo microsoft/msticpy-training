@@ -1,3 +1,4 @@
 msticpy[all]
 papermill
 openpyxl
+vt-py==0.15.0
