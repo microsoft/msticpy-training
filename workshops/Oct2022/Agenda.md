@@ -3,14 +3,13 @@
 
 | Session                            | Time | Presenter(s)    |
 |------------------------------------|------|-----------------|
-| 1. Intro to Notebooks              | 30   | Pete            |x
-| 2. Intro to MSTICPy                | 20   | Pete            |x
-| 3. MSTICPy Config                  | 15   | Ian             |x
+| 1. Intro to Notebooks & MSTICPy    | 30   | Pete            |
+| 2. MSTICPy Config                  | 20   | Ian             |
 | Break                              | 15   |                 |
-| 4. Acquiring data with MSTICPy     | 20   | Pete            |
-| 5. Enrichment with MSTICPy         | 20   | Ian             |
-| 6. Jupyter notebooks advanced      | 15   | Ian             |x
+| 3. Acquiring data with MSTICPy     | 20   | Pete            |
+| 4. Enrichment with MSTICPy         | 25   | Ian             |
+| 5. Jupyter notebooks advanced      | 15   | Ian             |
 | Break                              | 15   |                 |
-| 7. Data Analysis with MSTICPy      | 30   | Ashwin          |
-| 8. Data Visualization with MSTICPy | 30   | Ian             |
-| 9. Putting it into operation       | 30   | Pete & Ian      |
+| 6. Data Analysis with MSTICPy      | 30   | Ashwin          |
+| 7. Data Visualization with MSTICPy | 30   | Ian             |
+| 8. Putting it into operation       | 30   | Pete & Ian      |
