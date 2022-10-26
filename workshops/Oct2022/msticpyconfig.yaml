@@ -1,11 +1,12 @@
 AzureSentinel:
   Workspaces:
-    Default:
+    CyberSecuritySOC: &id001
       ResourceGroup: soc
       SubscriptionId: d1d8779d-38d7-4f06-91db-9cbc8de0176f
       TenantId: 72f988bf-86f1-41af-91ab-2d7cd011db47
       WorkspaceId: 8ecf8077-cf51-4820-aadd-14040956f35d
       WorkspaceName: CyberSecuritySOC
+    Default: *id001
 TIProviders:
   GreyNoise:
     Args:
@@ -39,5 +40,3 @@ QueryDefinitions:
   - ./data
   Default:
   - queries
-TIProviders:
-
