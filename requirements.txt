@@ -1,3 +1,5 @@
 msticpy[all]
 papermill
 openpyxl
+vt-py==0.15.0
+ipywidgets==7.7.2
