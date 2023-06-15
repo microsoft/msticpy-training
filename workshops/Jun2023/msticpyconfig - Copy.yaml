@@ -1,0 +1,50 @@
+Azure:
+  auth_methods:
+  - cli
+  - msi
+  - devicecode
+  cloud: global
+AzureSentinel:
+  Workspaces:
+    CyberSecuritySOC: &id001
+      ResourceGroup: soc
+      SubscriptionId: d1d8779d-38d7-4f06-91db-9cbc8de0176f
+      TenantId: 72f988bf-86f1-41af-91ab-2d7cd011db47
+      WorkspaceId: 8ecf8077-cf51-4820-aadd-14040956f35d
+      WorkspaceName: CyberSecuritySOC
+    Default: *id001
+    SentinelTest:
+      ResourceGroup: asihuntomsworkspacerg
+      SubscriptionId: 40dcc8bf-0478-4f3b-b275-ed0a94f2c013
+      TenantId: 72f988bf-86f1-41af-91ab-2d7cd011db47
+      WorkspaceName: ASIHuntOMSWorkspaceV4
+      WorkspaceId: 52b1ab41-869e-4138-9e40-2a4457f09bf0
+DataProviders:
+  Kusto:
+    Args:
+      ClientId: null
+      ClientSecret: ' '
+      Cluster: https://mycluster.kusto.com
+      IntegratedAuth: true
+      TenantId: 72f988bf-86f1-41af-91ab-2d7cd011db47
+OtherProviders:
+  GeoIPLite:
+    Args:
+      AuthKey: Yvb4F3QgkaJFGRoF
+      DBFolder: ./.msticpy
+    Provider: GeoLiteLookup
+QueryDefinitions:
+  Custom:
+  - ./data
+  Default:
+  - queries
+TIProviders:
+  TorExitNodes:
+    Primary: False
+    Provider: Tor
+  VirusTotal:
+    Args:
+      AuthKey: 45bd4e230cc0da7e35aa8f2752178df8a82e059c94ff230e6de87aa1aecc1951
+      UseVT3PrivateAPI: false
+    Primary: true
+    Provider: VirusTotal
