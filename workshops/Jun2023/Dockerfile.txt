@@ -1,6 +1,13 @@
 ﻿FROM continuumio/miniconda3
 
+# "Installing conda packages"
+# RUN conda create -n firecon python=3.11
+# RUN conda init bash
+# RUN conda activate firecon
+RUN /opt/conda/bin/conda install jupyter -y --quiet
+
 # installing Msticpy requirements and dependencies
-RUN pip install azure-cli
+RUN pip install azure-cli openpyxl
 RUN pip install --upgrade msticpy[all]
-RUN pip install papermill
+
+USER $NB_UID

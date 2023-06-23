@@ -4,47 +4,70 @@
         "context": "..",
         "dockerfile": "Dockerfile"
     },
-    // Set *default* container specific settings.json values on container create.
-    "settings": {
-        "python.defaultInterpreterPath": "/opt/conda/bin/python",
-        "python.linting.enabled": true,
-        "python.linting.flake8Path": "/opt/conda/bin/flake8",
-        "python.formatting.provider": "black",
-        "python.linting.pycodestylePath": "/opt/conda/bin/pycodestyle",
-        "python.linting.pydocstylePath": "/opt/conda/bin/pydocstyle",
-        "python.linting.pylintPath": "/opt/conda/bin/pylint",
-        "files.autoSave": "afterDelay",
-        "team.showWelcomeMessage": false,
-        "python.linting.ignorePatterns": [
-            ".vscode/*.py",
-            "**/site-packages/**/*.py",
-            "**/tests/test_*.py",
-            "docs/**",
-            "docs/source/**",
-            "docs/build/**"
-        ],
-        "editor.tabSize": 4,
-        "editor.suggestSelection": "first",
-        "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-        "autoDocstring.docstringFormat": "numpy",
-        "git.autofetch": true,
-        "python.terminal.activateEnvironment": false
-    },
-    // Add the IDs of extensions you want installed when the container is created.
-    "extensions": [
-        "ms-toolsai.jupyter",
-        "ms-toolsai.jupyter-keymap",
-        "ms-toolsai.jupyter-renderers",
-        "ms-toolsai.vscode-jupyter-cell-tags",
-        "ms-toolsai.vscode-jupyter-slideshow",
-        "ms-vscode-remote.remote-containers",
-        "vscode-icons-team.vscode-icons",
-        "eamodio.gitlens",
-        "lextudio.restructuredtext",
-        "mohsen1.prettify-json",
-        "njpwerner.autodocstring",
-        "github.vscode-pull-request-github"
+    "mounts": [
+        "source=${localWorkspaceFolder}/workshops/Jun2023,target=/notebooks,type=bind,consistency=cached"
     ],
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/opt/conda/bin/python",
+				"python.linting.enabled": true,
+				"python.linting.flake8Path": "/opt/conda/bin/flake8",
+				"python.formatting.provider": "black",
+				"python.linting.pycodestylePath": "/opt/conda/bin/pycodestyle",
+				"python.linting.pydocstylePath": "/opt/conda/bin/pydocstyle",
+				"python.linting.pylintPath": "/opt/conda/bin/pylint",
+				"files.autoSave": "afterDelay",
+				"team.showWelcomeMessage": false,
+				"python.linting.ignorePatterns": [
+					".vscode/*.py",
+					"**/site-packages/**/*.py",
+					"**/tests/test_*.py",
+					"docs/**",
+					"docs/source/**",
+					"docs/build/**"
+				],
+				"editor.tabSize": 4,
+				"editor.suggestSelection": "first",
+				"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+				"autoDocstring.docstringFormat": "numpy",
+				"git.autofetch": true,
+				"python.terminal.activateEnvironment": false
+			},
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-toolsai.jupyter",
+				"ms-toolsai.jupyter-keymap",
+				"ms-toolsai.jupyter-renderers",
+				"ms-toolsai.vscode-jupyter-cell-tags",
+				"ms-toolsai.vscode-jupyter-slideshow",
+				"ms-python.python",
+				"ms-vscode-remote.remote-containers",
+				"vscode-icons-team.vscode-icons",
+				"eamodio.gitlens",
+				"lextudio.restructuredtext",
+				"mohsen1.prettify-json",
+				"njpwerner.autodocstring",
+				"github.vscode-pull-request-github"
+			]
+		}
+	},
+	"forwardPorts": [
+		8888
+	],
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "python --version",
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
     // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-    "remoteUser": "jovyan"
+    "containerEnv": {
+		"MSTICPYCONFIG": "/notebooks/msticpyconfig.yaml",
+		"PYTHONPATH": "/opt/conda/bin/python"
+	}
 }
