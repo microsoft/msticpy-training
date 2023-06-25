@@ -32,7 +32,7 @@
 				"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 				"autoDocstring.docstringFormat": "numpy",
 				"git.autofetch": true,
-				"python.terminal.activateEnvironment": false
+				"python.terminal.activateEnvironment": true
 			},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
@@ -67,7 +67,7 @@
 	// "remoteUser": "root"
     // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
     "containerEnv": {
-		"MSTICPYCONFIG": "/notebooks/msticpyconfig.yaml",
+		"MSTICPYCONFIG": "${containerWorkspaceFolder}/workshops/Jun2023/msticpyconfig.yaml",
 		"PYTHONPATH": "/opt/conda/bin/python"
 	}
 }

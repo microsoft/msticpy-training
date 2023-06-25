@@ -1,0 +1,48 @@
+AzureSentinel:
+  Workspaces:
+    CyberSecuritySOC: &id001
+      ResourceGroup: soc
+      SubscriptionId: d1d8779d-38d7-4f06-91db-9cbc8de0176f
+      TenantId: 72f988bf-86f1-41af-91ab-2d7cd011db47
+      WorkspaceId: 8ecf8077-cf51-4820-aadd-14040956f35d
+      WorkspaceName: CyberSecuritySOC
+    Default: *id001
+TIProviders:
+  GreyNoise:
+    Args:
+      AuthKey: ''
+    Primary: true
+    Provider: GreyNoise
+KeyVault:
+  AuthnType: device
+  Authority: global
+  AzureRegion: EastUS
+  ResourceGroup: MSTICpy
+  SubscriptionId: 40dcc8bf-0478-4f3b-b275-ed0a94f2c013
+  TenantId: 72f988bf-86f1-41af-91ab-2d7cd011db47
+  UseKeyring: false
+  VaultName: msticpy-training
+DataProviders:
+  MicrosoftDefender:
+    Args:
+      ClientId: 01a3feba-14bb-445d-a192-2e9544d1add3
+      ClientSecret:
+        KeyVault: defendersecret
+      TenantId: 8360dd21-0294-4240-9128-89611f415c53
+KustoClusters:
+  # Kusto-Firecon23:
+  #   Args:
+  #     Cluster: https://msticpytraining.eastus.kusto.windows.net/
+  #     IntegratedAuth: true
+  #     TenantId: 72f988bf-86f1-41af-91ab-2d7cd011db47
+Azure:
+  auth_methods:
+  - cli
+  - msi
+  - devicecode
+  cloud: global
+QueryDefinitions:
+  Custom:
+  - ./data
+  Default:
+  - queries

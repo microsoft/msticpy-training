@@ -23,19 +23,14 @@ KeyVault:
   UseKeyring: false
   VaultName: msticpy-training
 DataProviders:
-  Kusto-Firecon22:
-    Args:
-      ClientId: null
-      ClientSecret: null
-      Cluster: https://msticpytraining.eastus.kusto.windows.net/
-      IntegratedAuth: true
-      TenantId: 72f988bf-86f1-41af-91ab-2d7cd011db47
   MicrosoftDefender:
     Args:
       ClientId: 01a3feba-14bb-445d-a192-2e9544d1add3
       ClientSecret:
         KeyVault: defendersecret
       TenantId: 8360dd21-0294-4240-9128-89611f415c53
+KustoClusters:
+  # Cluster entries
 Azure:
   auth_methods:
   - cli
