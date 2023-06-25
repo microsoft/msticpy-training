@@ -1,0 +1,81 @@
+metadata:
+    version: 1
+    description: Kusto Queries
+    data_environments: [Kusto]
+    data_families: [DeviceEvents, Network]
+    cluster: https://msticpytraining.eastus.kusto.windows.net/
+    database: msticpydata
+    tags: ["user", "network"]
+defaults:
+  parameters:
+    table:
+        description: Table name
+        type: str
+        default: "DeviceProcessEvents"
+    start:
+        description: Query start time
+        type: datetime
+        default: -30
+    end:
+        description: Query end time
+        type: datetime
+        default: 0
+    add_query_items:
+        description: Additional query clauses
+        type: str
+        default: ""
+sources:
+    list_network_flow_by_ip:
+        description: Lists all network flows for an IP address
+        metadata:
+          data_families: [Network]
+        args:
+          query: '
+              {table}
+              | where VMIPAddress =~ "{ip}" or PublicIPs has "{ip}"
+              {add_query_items}'
+        uri: None
+        parameters:
+          table:
+            description: Name of table
+            type: str
+            default: AzNetFlows
+          ip:
+            description: IP to filter on
+            type: str
+    list_process_creates_by_host:
+        description: Lists all process creation events by host
+        metadata:
+          data_families: [DeviceEvents]
+        args:
+          query: '
+              {table}
+              | where Computer =~ "{hostname}"
+              {add_query_items}'
+        uri: None
+        parameters:
+          table:
+            description: Name of table
+            type: str
+            default: WindowsProcessEvents
+          hostname:
+            description: Host to get processes for
+            type: str
+    list_syslog_by_facility:
+        description: Lists all Syslog Events by Facility
+        metadata:
+          data_families: [DeviceEvents]
+        args:
+          query: '
+              {table}
+              | where Facility =~ "{facility}"
+              {add_query_items}'
+        uri: None
+        parameters:
+          table:
+            description: Name of table
+            type: str
+            default: Syslog
+          facility:
+            description: The syslog facility to return logs for
+            type: str
